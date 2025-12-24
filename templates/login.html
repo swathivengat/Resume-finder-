@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Resume Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+<div class="login-wrapper">
+    <div class="login-box">
+        <div class="login-left">
+            <h1>Welcome to Resume Matcher</h1>
+            <p>
+                AI-powered resume and job description matching platform.
+                Choose your role to continue.
+            </p>
+        </div>
+<div class="login-right">
+    <h2>User Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <div class="role-select">
+        <label>
+            <input type="radio" name="role" value="user" checked>
+            Candidate
+        </label>
+        <label>
+            <input type="radio" name="role" value="hr">
+            HR / Recruiter
+        </label>
+    </div>
+    <button onclick="login()">LOGIN</button>
+    <p id="login-msg" class="note"></p>
+
+    <p class="note">
+        Candidate → candidate / candidate@1<br>
+        HR → admin / admin@1
+    </p>
+</div>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

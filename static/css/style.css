@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background: #f4f6f8;
+  color: rgb(2, 0, 36);
+  line-height: 1.6;
+}
+
+.nav-bar {
+  background: linear-gradient(90deg, rgb(115, 31, 249) 0%, rgb(222, 72, 233) 100%);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(0);
+  opacity: 0;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.container:hover::before {
+  filter: blur(1.2em);
+  opacity: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+h1, h2 {
+  color: #390d47;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 20px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  margin-top: 70px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, rgb(115, 31, 249), rgb(222, 72, 233));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  flex: 1;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #0a2540;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  color: white;
+  background: linear-gradient(90deg, #fcc3d7 0%, #FCE4EC 100%);
+}
+
+.home-icon {
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.home-icon:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.1);
+}
+
+#result-list {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.result-card {
+  background: #f9f9ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.result-card h4 {
+  margin-bottom: 6px;
+  color: #390d47;
+}
+
+.score {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #6a11cb;
+}
+
+.skills p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.candidate-page .nav-bar {
+  background: transparent;
+  padding: 0;
+  height: 0;
+  box-shadow: none;
+}
+
+.candidate-page .home-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: linear-gradient(90deg, rgb(115, 31, 249), rgb(222, 72, 233));
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.candidate-page .container {
+  margin-top: 120px;
+}

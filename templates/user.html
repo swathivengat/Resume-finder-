@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="/" class="btn-home"></a>
+        <body class="candidate-page">
+
+    </div>
+    <div class="container center-interface">
+        <div class="card">
+            <h2>Upload Your Resume</h2>
+            <p>Supported format: PDF only</p>
+            
+            <input type="file" id="resumeFile" accept=".pdf">
+            <button onclick="uploadResume()">Upload Resume</button>
+            <p id="msg"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/user.js') }}"></script>
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', mode);
+        });
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+    <div class="nav-bar">
+    <a href="/" class="home-icon">🏠</a>
+</div>
+    <script>
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Matcher - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="home-page">
+<div class="nav-bar">
+    <a href="/" class="logo-link">  
+    </a>
+</div>
+<div class="container center">
+    <h1>Welcome to Resume Matcher</h1>
+    <p class="subtitle">AI-powered resume & job description matching</p>
+    <div class="card-container">
+        <a href="/user" class="card">
+            <h2>Candidate</h2>
+            <p>Upload your resume</p>
+        </a>
+        <a href="/hr" class="card">
+            <h2>HR / Recruiter</h2>
+            <p>Find best matching candidates</p>
+        </a>
+    </div>
+</div>
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+}
+toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('theme',
+        body.classList.contains('dark-mode') ? 'dark' : 'light'
+    );
+});
+</script>
+</body>
+</html>
